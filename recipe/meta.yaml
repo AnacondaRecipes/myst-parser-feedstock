@@ -59,6 +59,6 @@ extra:
     reason: Needed for pypercard.
     recipe-maintainers:
       - bkreider
-  only_lint:
+  only-lint:
     - missing_source
 
