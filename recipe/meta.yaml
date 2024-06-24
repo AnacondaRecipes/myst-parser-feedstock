@@ -16,6 +16,9 @@ build:
   noarch: python
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
+  # noarch, so only build on linux64
+  skip: True [not linux64]
+
 requirements:
   host:
     - python >=3.7
@@ -52,3 +55,10 @@ extra:
   recipe-maintainers:
     - dopplershift
     - choldgraf
+  anaconda:
+    reason: Needed for pypercard.
+    recipe-maintainers:
+      - bkreider
+  only-lint:
+    - missing_source
+
